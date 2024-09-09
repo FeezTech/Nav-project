@@ -1,0 +1,120 @@
+body {
+  background-color: greenyellow;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.responsive-nav {
+  background-color: rgb(89, 89, 234);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: flex-end;
+  align-items: center;
+  height: auto;
+}
+
+ul li {
+  list-style: none;
+  color: white;
+  display: flex;
+}
+
+.menu-toggle {
+  position: absolute;
+  display: none;
+  right: 0px;
+  top: 0;
+  font-size: 22px;
+  color: white;
+  padding: 0;
+  cursor: pointer;
+  justify-content: flex-end;
+  align-items: center;
+  transition: 3s;
+  z-index: 100;
+
+}
+
+#menu {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  padding: 10px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  background-color: rgb(72, 72, 169);
+  border-radius: 3px;
+}
+
+#menu li {
+  opacity: 0; /* Initially hide all items */
+  transform: translateY(20px); /* Offset them slightly */
+  animation: slideIn 0.5s forwards; /* Apply animation */
+
+}
+
+/* Animating each menu item one by one using nth-child */
+#menu.show li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+#menu.show li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+#menu.show li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+#menu.show li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+#menu.show li:nth-child(5) {
+  animation-delay: 1.0s;
+}
+
+#menu.show li:nth-child(6) {
+  animation-delay: 1.2s;
+}
+
+/* Keyframes for the sliding animation */
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+@media (max-width: 500px) {
+  .menu-toggle {
+    display: block;
+    background-color: blue;
+  }
+
+  #menu {
+    display: none;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  #menu.show {
+    display: flex;
+  }
+}
